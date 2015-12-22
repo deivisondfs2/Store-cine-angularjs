@@ -11,9 +11,15 @@
 
 		<div class="row">
 			<div class="col-md-4" ng-controller="ListProducts as item">
-				<h2>{{item.product.name}}</h2>
-				<h3>{{item.product.price}}</h3>
-				<small>{{item.product.description}}</small>
+				<ul>
+					<li ng-repeat="objectProduct in item.product" ng-hide="objectProduct.soldOut">
+						<h2>{{objectProduct.name}}</h2>					
+						<h3>{{objectProduct.price}}</h3>
+						<small>{{objectProduct.description}}</small>
+						<button ng-show="{{objectProduct.addCart}}">Price</button>
+					</li>
+					
+				</ul>
 			</div>
 		</div>
 
@@ -21,4 +27,5 @@
 </body>
 </html>
 <script src="js/angular.min.js"></script>
+<script src="js/app/stock.js"></script>
 <script src="js/app/app.js"></script>
