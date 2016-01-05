@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+	<meta charset="UTF-8">
+ 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.mim.css">
+
+	<title>AngularJs movie house</title>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Movies store</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>                    
+                </ul>
+            </div>            
+        </div>        
+    </nav>
+
+	<div class="container">
+
+		<div class="row">
+            <div class="col-md-3">
+                <p class="lead">Cine Category</p>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">action</a>
+                    <a href="#" class="list-group-item">adventure</a>
+                    <a href="#" class="list-group-item">technology</a>                    
+                </div>
+            </div>
+        
+        	<div class="col-md-9" ng-controller="ListMovies as movies">
+        		<div class="row">
+        			<div ng-repeat="movie in movies.product" class="col-sm-5 col-lg-5 col-md-5">
+                        <div class="thumbnail">
+                            <img src="{{movie.image}}" alt="{{movie.name}}">
+                            <div class="caption">
+                                <h4 class="pull-right">${{movie.price}}</h4>
+                                <h4><a href="#">{{movie.name}}</a></h4>
+                                <p>{{movie.description}} <a ng-show="{{movie.haveLink}}" target="_blank" href="{{movie.link}}">{{movie.link}}</a></p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">{{movie.reviews}} reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div>
+                            <button ng-show="{{movie.addCart}}" type="button" class="btn btn-sm btn-success">Add Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="js/angular.min.js"></script>
+<script src="js/app/stock.js"></script>
+<script src="js/app/app.js"></script>

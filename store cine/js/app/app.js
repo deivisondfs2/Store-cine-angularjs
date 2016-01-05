@@ -1,6 +1,6 @@
 var app = angular.module('store', []);
 
-app.controller('ListProducts', function(){
+app.controller('ListMovies', function(){
 	this.product = stock;
 })
 
