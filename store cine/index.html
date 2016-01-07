@@ -56,19 +56,35 @@
                             <div class="caption">
                                 <h4 class="pull-right">{{movie.price | currency}}</h4>
                                 <h4><a href="#">{{movie.name | uppercase | limitTo:20}}</a></h4>
-                                <p>{{movie.description}} <a ng-show="{{movie.haveLink}}" target="_blank" href="{{movie.link}}">{{movie.link}}</a></p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">{{movie.reviews}} reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
+                                <p>{{movie.description.resume}} <a ng-show="{{movie.haveLink}}" target="_blank" href="{{movie.link}}">{{movie.link}}</a></p>
                             </div>
                             <button ng-show="{{movie.addCart}}" type="button" class="btn btn-sm btn-success">Add Cart</button>
+                            <div class="ratings" ng-controller="PainelTabsController as painelTab">
+                                <p class="pull-right"></p>
+                                <p calss="pull-right">
+                                    <span class="pull-right glyphicon glyphicon-star"></span>
+                                    <span class="pull-right glyphicon glyphicon-star"></span>
+                                    <span class="pull-right glyphicon glyphicon-star"></span>
+                                    <span class="pull-right glyphicon glyphicon-star"></span>
+                                    <span class="pull-right glyphicon glyphicon-star-empty"></span>
+                                </p>
+                                <ul class="nav nav-pills">
+                                    <li role="presentation" ng-class="{active: painelTab.isTabSelected(1)}">
+                                        <a href="javascript:;" ng-click="painelTab.setTab(1)">Descriptions</a>
+                                    </li>
+                                    <li role="presentation" ng-class="{active: painelTab.isTabSelected(2)}">
+                                        <a href="javascript:;" ng-click="painelTab.setTab(2)">{{movie.reviews}} reviews</a>
+                                    </li>
+                                </ul>
+                                <div class="painel" ng-show="painelTab.isTabSelected(1)">
+                                    <h4>Description</h4>
+                                    <p>{{movie.description.descFull}}</p>
+                                </div>
+                                <div class="painel" ng-show="painelTab.isTabSelected(2)">
+                                    <h4>Reviews</h4>
+                                    <p></p>
+                                </div>                                
+                            </div>                            
                         </div>
                     </div>
                 </div>
