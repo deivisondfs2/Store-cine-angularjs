@@ -73,7 +73,7 @@
                                         <a href="javascript:;" ng-click="painelTab.setTab(1)">Descriptions</a>
                                     </li>
                                     <li role="presentation" ng-class="{active: painelTab.isTabSelected(2)}">
-                                        <a href="javascript:;" ng-click="painelTab.setTab(2)">{{movie.reviews}} reviews</a>
+                                        <a href="javascript:;" ng-click="painelTab.setTab(2)">{{movie.reviews.length}} reviews</a>
                                     </li>
                                 </ul>
                                 <div class="painel" ng-show="painelTab.isTabSelected(1)">
@@ -81,8 +81,17 @@
                                     <p>{{movie.description.descFull}}</p>
                                 </div>
                                 <div class="painel" ng-show="painelTab.isTabSelected(2)">
-                                    <h4>Reviews</h4>
-                                    <p></p>
+                                    <ul class="list-group" >
+                                        <li class="list-group-item" ng-repeat="review in movie.reviews">
+                                                                                        
+                                            <span ng-repeat="star in movies.getArrayNumber(review.star) ">
+                                                <span class="glyphicon glyphicon-star"></span>
+                                            </span>                                                               
+
+                                            <h4 class="list-group-item-heading">{{review.description}}</h4>
+                                            <p class="list-group-item-text">{{review.author}}</p>
+                                        </li>                                    
+                                    </ul>
                                 </div>                                
                             </div>                            
                         </div>

@@ -13,7 +13,18 @@ var stock = [
 						thumb: 'img/death_note.jpg'
 					}
 				],
-		reviews: 4,
+		reviews: [
+				{
+					star:4,
+					description: "very good!",
+					author: "deivisondfs@gmail.com"
+				},
+				{
+					star:1,
+					description: "no good",
+					author: "deivisondfs@gmail.com"
+				}
+		],
 		link:'www.google.com',
 		category: 'action',
 		haveLink:true,
@@ -34,7 +45,18 @@ var stock = [
 						thumb: 'img/Pixels-Online.jpg'
 					}
 				],
-		reviews: 6,
+		reviews: [
+				{
+					star:4,
+					description: "very good!",
+					author: "deivisondfs@gmail.com"
+				},
+				{
+					star:1,
+					description: "no good",
+					author: "deivisondfs@gmail.com"
+				}
+		],
 		link:'www.google.com',
 		category: 'technology',
 		haveLink:true,

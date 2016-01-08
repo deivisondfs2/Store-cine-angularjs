@@ -2,6 +2,14 @@ var app = angular.module('store', []);
 
 app.controller('ListMovies', function(){
 	this.product = stock;
+
+	this.getArrayNumber = function(num) {
+		var array = [];
+		for (var i = null; i < num; i++) {
+			array.push(i);
+		};
+	   return array;   
+	};
 })
 
 
