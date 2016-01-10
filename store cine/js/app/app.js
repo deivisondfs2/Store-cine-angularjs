@@ -10,7 +10,7 @@ app.controller('ListMovies', function(){
 		};
 	   return array;   
 	};
-})
+});
 
 
 app.controller('PainelTabsController', function(){
@@ -19,10 +19,20 @@ app.controller('PainelTabsController', function(){
 
 	this.setTab = function(newTab){
 		this.tab = newTab;
-	}
+	};
 
 	this.isTabSelected = function(tab){
 		return this.tab == tab;
-	}
+	};
 
-})
+});
+
+app.controller('reviewsController', function(){
+	this.reviewForm = {};
+
+	this.addReviewMovie = function(movie){
+		console.log(this.reviewForm);
+		movie.reviews.push(this.reviewForm);
+		this.reviewForm = {};
+	};
+});
