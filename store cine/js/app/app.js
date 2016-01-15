@@ -36,3 +36,17 @@ app.controller('reviewsController', function(){
 		this.reviewForm = {};
 	};
 });
+
+app.directive('navbarDirective', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'views/directives/navbar-directive.html'
+	};
+});
+
+app.directive('categoryCine', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'views/directives/categorycine-directive.html'
+	};
+});
