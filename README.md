@@ -1,6 +1,6 @@
 # angularjs
 Store cine
 
-  this project test using angularJs and boostrap;
+  This project using angularJs and boostrap;
   
   
