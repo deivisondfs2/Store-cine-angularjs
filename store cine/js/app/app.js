@@ -1,7 +1,15 @@
-var app = angular.module('store', []);
+var app = angular.module('store', ['general-include', 'store-panelTab']);
 
-app.controller('ListMovies', function(){
-	this.product = stock;
+app.controller('ListMovies', ['$http' ,function($http){
+	//this.product = stock;
+
+	var stock = this;
+
+	stock.product = [];
+
+	$http.get('js/app/stock.json').success(function(data){
+		stock.product = data;
+	});
 
 	this.getArrayNumber = function(num) {
 		var array = [];
@@ -10,29 +18,8 @@ app.controller('ListMovies', function(){
 		};
 	   return array;   
 	};
-});
+}]);
 
-
-app.directive('painelTabs', function(){
-	return{
-		restrict: 'E',
-		templateUrl: 'views/directives/painelTabs.html',
-
-		controller: function(){
-			//set default 1
-			//this.tab = 1;
-
-			this.setTab = function(newTab){
-				this.tab = newTab;
-			};
-
-			this.isTabSelected = function(tab){
-				return this.tab == tab;
-			};
-		},
-		controllerAs: "painelTab"
-	};
-});
 
 app.controller('reviewsController', function(){
 	this.reviewForm = {};
@@ -44,16 +31,3 @@ app.controller('reviewsController', function(){
 	};
 });
 
-app.directive('navbarDirective', function(){
-	return {
-		restrict: 'E',
-		templateUrl: 'views/directives/navbar-directive.html'
-	};
-});
-
-app.directive('categoryCine', function(){
-	return {
-		restrict: 'E',
-		templateUrl: 'views/directives/categorycine-directive.html'
-	};
-});
