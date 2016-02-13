@@ -1,7 +1,7 @@
 # angularjs
 Store cine
 
-  This project using angularJs and boostrap;
+This project is made with AngularJS and Boostrap;
   
   ![Index Page](https://github.com/deivisondfs2/angularjs/blob/master/store%20cine/img/AngularJs_movie_house.png "Index Page")
   
