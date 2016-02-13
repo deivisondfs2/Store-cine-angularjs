@@ -19,28 +19,16 @@
             <div class="col-md-3">                
                 <category-cine></category-cine>
             </div>
-        
-        	<div class="col-md-9" ng-controller="ListMovies as movies">
-        		<div class="row">
-        			<div ng-repeat="movie in movies.product" class="col-sm-5 col-lg-5 col-md-5">
-                        <div class="thumbnail">
-                            <img ng-src="{{movie.images[0].full}}" alt="{{movie.name}}">
-                            <div class="caption">
-                                <h4 class="pull-right">{{movie.price | currency}}</h4>
-                                <h4><a href="#">{{movie.name | uppercase | limitTo:20}}</a></h4>
-                                <p>{{movie.description.resume}} <a ng-show="{{movie.haveLink}}" target="_blank" href="{{movie.link}}">{{movie.link}}</a></p>
-                            </div>
-                            <button ng-show="{{movie.addCart}}" type="button" class="btn btn-sm btn-success">Add Cart</button>
-                            <painel-tabs></painel-tabs>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <div ng-view></div>
+        	
 		</div>
 	</div>
 </body>
 </html>
 <script src="js/angular.min.js"></script>
+<script src="js/angular-route.js"></script>
 <script src="js/app/app.js"></script>
+<script src="js/app/routes.js"></script>
 <script src="js/app/panel-tabs.js"></script>
 <script src="js/app/general-include.js"></script>

@@ -1,4 +1,4 @@
-var app = angular.module('store', ['general-include', 'store-panelTab']);
+var app = angular.module('store', ['ngRoute','general-include', 'store-panelTab']);
 
 app.controller('ListMovies', ['$http' ,function($http){
 	//this.product = stock;
