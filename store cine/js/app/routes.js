@@ -7,6 +7,7 @@ angular.module('store').config(function($routeProvider) {
 
 		templateUrl: 'template/pages/movies/index.html',
 	})
+	
 
 	.otherwise({redirectTo: '/'});
 });

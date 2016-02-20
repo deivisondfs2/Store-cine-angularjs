@@ -1,8 +1,6 @@
 var app = angular.module('store', ['ngRoute','general-include', 'store-panelTab']);
 
 app.controller('ListMovies', ['$http' ,function($http){
-	//this.product = stock;
-
 	var stock = this;
 
 	stock.product = [];
